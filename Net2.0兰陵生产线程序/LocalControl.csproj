@@ -86,10 +86,6 @@
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EncryptionAndDecryption, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\TJMicroPower\DataControl\DataControl\bin\Debug\EncryptionAndDecryption.dll</HintPath>
-    </Reference>
     <Reference Include="FileExAndIm">
       <Name>FileExAndIm</Name>
       <HintPath>bin\Release\FileExAndIm.dll</HintPath>
@@ -378,7 +374,12 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Net2.0EncryptionAndDecryption\EncryptionAndDecryption\EncryptionAndDecryption\EncryptionAndDecryption.csproj">
+      <Project>{7f713244-fda4-4c3d-a393-3393201e9e7a}</Project>
+      <Name>EncryptionAndDecryption</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent />

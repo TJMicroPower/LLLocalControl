@@ -1,0 +1,1277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="CheckRockey">
+        <s:complexType />
+      </s:element>
+      <s:element name="CheckRockeyResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckRockeyResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BackupData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="l_date" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filePath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BackupDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="BackupDataResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CreatDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CreatDirectoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SaveFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SaveFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteDirectoryResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="path" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeleteFileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BottleAndBoxCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="BottleAndBoxCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="BottleAndBoxCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PandXBangding">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PandXBangdingResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PandXBangdingResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUploadfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fname" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckUploadfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="CheckUploadfileResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendProductSet">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendProductSetResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendProductSetResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CustomerInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="CustomerInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CustomerInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SenInformation">
+        <s:complexType />
+      </s:element>
+      <s:element name="SenInformationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SenInformationResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendZgProduct">
+        <s:complexType />
+      </s:element>
+      <s:element name="SendZgProductResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendZgProductResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="maxTime">
+        <s:complexType />
+      </s:element>
+      <s:element name="maxTimeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="maxTimeResult" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileUpLoad">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="by" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FileUpLoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FileUpLoadResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="deviceid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskTableName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskTableNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskTableNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTaskFinished">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_flag" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetTaskFinishedResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SetTaskFinishedResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetColumnName">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetColumnNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetColumnNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPCZ">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="boxCode" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="bList" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="productName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="oldBoxcode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SPCZResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SPCZResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Increment">
+        <s:complexType />
+      </s:element>
+      <s:element name="IncrementResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncrementResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="IncrementTwo">
+        <s:complexType />
+      </s:element>
+      <s:element name="IncrementTwoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="IncrementTwoResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFHFileNameToDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertFHFileNameToDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertFHFileNameToDBResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebSpliteLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebSpliteLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebSpliteLineResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebGetFNameList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="type" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebGetFNameListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="WebGetFNameListResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoteFHDataImPort">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoteFHDataImPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoteFHDataImPortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RoteDuoFHDataImPort">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoteDuoFHDataImPortResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoteDuoFHDataImPortResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebTuoPanSpliteLine">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strInfo" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebTuoPanSpliteLineResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="WebTuoPanSpliteLineResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebUpdateToFinished">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="fName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="i" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="WebUpdateToFinishedResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoteTuiHuoDataImport">
+        <s:complexType />
+      </s:element>
+      <s:element name="RoteTuiHuoDataImportResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RoteTuiHuoDataImportResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="CheckRockeySoapIn">
+    <wsdl:part name="parameters" element="tns:CheckRockey" />
+  </wsdl:message>
+  <wsdl:message name="CheckRockeySoapOut">
+    <wsdl:part name="parameters" element="tns:CheckRockeyResponse" />
+  </wsdl:message>
+  <wsdl:message name="BackupDataSoapIn">
+    <wsdl:part name="parameters" element="tns:BackupData" />
+  </wsdl:message>
+  <wsdl:message name="BackupDataSoapOut">
+    <wsdl:part name="parameters" element="tns:BackupDataResponse" />
+  </wsdl:message>
+  <wsdl:message name="CreatDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:CreatDirectory" />
+  </wsdl:message>
+  <wsdl:message name="CreatDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:CreatDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileSoapIn">
+    <wsdl:part name="parameters" element="tns:SaveFile" />
+  </wsdl:message>
+  <wsdl:message name="SaveFileSoapOut">
+    <wsdl:part name="parameters" element="tns:SaveFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteDirectory" />
+  </wsdl:message>
+  <wsdl:message name="DeleteDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="BottleAndBoxCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:BottleAndBoxCode" />
+  </wsdl:message>
+  <wsdl:message name="BottleAndBoxCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:BottleAndBoxCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="PandXBangdingSoapIn">
+    <wsdl:part name="parameters" element="tns:PandXBangding" />
+  </wsdl:message>
+  <wsdl:message name="PandXBangdingSoapOut">
+    <wsdl:part name="parameters" element="tns:PandXBangdingResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckUploadfileSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckUploadfile" />
+  </wsdl:message>
+  <wsdl:message name="CheckUploadfileSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckUploadfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendProductSetSoapIn">
+    <wsdl:part name="parameters" element="tns:SendProductSet" />
+  </wsdl:message>
+  <wsdl:message name="SendProductSetSoapOut">
+    <wsdl:part name="parameters" element="tns:SendProductSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:CustomerInformation" />
+  </wsdl:message>
+  <wsdl:message name="CustomerInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:CustomerInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SenInformationSoapIn">
+    <wsdl:part name="parameters" element="tns:SenInformation" />
+  </wsdl:message>
+  <wsdl:message name="SenInformationSoapOut">
+    <wsdl:part name="parameters" element="tns:SenInformationResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendZgProductSoapIn">
+    <wsdl:part name="parameters" element="tns:SendZgProduct" />
+  </wsdl:message>
+  <wsdl:message name="SendZgProductSoapOut">
+    <wsdl:part name="parameters" element="tns:SendZgProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="maxTimeSoapIn">
+    <wsdl:part name="parameters" element="tns:maxTime" />
+  </wsdl:message>
+  <wsdl:message name="maxTimeSoapOut">
+    <wsdl:part name="parameters" element="tns:maxTimeResponse" />
+  </wsdl:message>
+  <wsdl:message name="FileUpLoadSoapIn">
+    <wsdl:part name="parameters" element="tns:FileUpLoad" />
+  </wsdl:message>
+  <wsdl:message name="FileUpLoadSoapOut">
+    <wsdl:part name="parameters" element="tns:FileUpLoadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTask" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskTableNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskTableName" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskTableNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskTableNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetTaskFinishedSoapIn">
+    <wsdl:part name="parameters" element="tns:SetTaskFinished" />
+  </wsdl:message>
+  <wsdl:message name="SetTaskFinishedSoapOut">
+    <wsdl:part name="parameters" element="tns:SetTaskFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetColumnNameSoapIn">
+    <wsdl:part name="parameters" element="tns:GetColumnName" />
+  </wsdl:message>
+  <wsdl:message name="GetColumnNameSoapOut">
+    <wsdl:part name="parameters" element="tns:GetColumnNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="SPCZSoapIn">
+    <wsdl:part name="parameters" element="tns:SPCZ" />
+  </wsdl:message>
+  <wsdl:message name="SPCZSoapOut">
+    <wsdl:part name="parameters" element="tns:SPCZResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncrementSoapIn">
+    <wsdl:part name="parameters" element="tns:Increment" />
+  </wsdl:message>
+  <wsdl:message name="IncrementSoapOut">
+    <wsdl:part name="parameters" element="tns:IncrementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IncrementTwoSoapIn">
+    <wsdl:part name="parameters" element="tns:IncrementTwo" />
+  </wsdl:message>
+  <wsdl:message name="IncrementTwoSoapOut">
+    <wsdl:part name="parameters" element="tns:IncrementTwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertFHFileNameToDBSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertFHFileNameToDB" />
+  </wsdl:message>
+  <wsdl:message name="InsertFHFileNameToDBSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertFHFileNameToDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebSpliteLineSoapIn">
+    <wsdl:part name="parameters" element="tns:WebSpliteLine" />
+  </wsdl:message>
+  <wsdl:message name="WebSpliteLineSoapOut">
+    <wsdl:part name="parameters" element="tns:WebSpliteLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebGetFNameListSoapIn">
+    <wsdl:part name="parameters" element="tns:WebGetFNameList" />
+  </wsdl:message>
+  <wsdl:message name="WebGetFNameListSoapOut">
+    <wsdl:part name="parameters" element="tns:WebGetFNameListResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoteFHDataImPortSoapIn">
+    <wsdl:part name="parameters" element="tns:RoteFHDataImPort" />
+  </wsdl:message>
+  <wsdl:message name="RoteFHDataImPortSoapOut">
+    <wsdl:part name="parameters" element="tns:RoteFHDataImPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoteDuoFHDataImPortSoapIn">
+    <wsdl:part name="parameters" element="tns:RoteDuoFHDataImPort" />
+  </wsdl:message>
+  <wsdl:message name="RoteDuoFHDataImPortSoapOut">
+    <wsdl:part name="parameters" element="tns:RoteDuoFHDataImPortResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebTuoPanSpliteLineSoapIn">
+    <wsdl:part name="parameters" element="tns:WebTuoPanSpliteLine" />
+  </wsdl:message>
+  <wsdl:message name="WebTuoPanSpliteLineSoapOut">
+    <wsdl:part name="parameters" element="tns:WebTuoPanSpliteLineResponse" />
+  </wsdl:message>
+  <wsdl:message name="WebUpdateToFinishedSoapIn">
+    <wsdl:part name="parameters" element="tns:WebUpdateToFinished" />
+  </wsdl:message>
+  <wsdl:message name="WebUpdateToFinishedSoapOut">
+    <wsdl:part name="parameters" element="tns:WebUpdateToFinishedResponse" />
+  </wsdl:message>
+  <wsdl:message name="RoteTuiHuoDataImportSoapIn">
+    <wsdl:part name="parameters" element="tns:RoteTuiHuoDataImport" />
+  </wsdl:message>
+  <wsdl:message name="RoteTuiHuoDataImportSoapOut">
+    <wsdl:part name="parameters" element="tns:RoteTuiHuoDataImportResponse" />
+  </wsdl:message>
+  <wsdl:portType name="Service1Soap">
+    <wsdl:operation name="CheckRockey">
+      <wsdl:input message="tns:CheckRockeySoapIn" />
+      <wsdl:output message="tns:CheckRockeySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BackupData">
+      <wsdl:input message="tns:BackupDataSoapIn" />
+      <wsdl:output message="tns:BackupDataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatDirectory">
+      <wsdl:input message="tns:CreatDirectorySoapIn" />
+      <wsdl:output message="tns:CreatDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <wsdl:input message="tns:SaveFileSoapIn" />
+      <wsdl:output message="tns:SaveFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <wsdl:input message="tns:DeleteDirectorySoapIn" />
+      <wsdl:output message="tns:DeleteDirectorySoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input message="tns:DeleteFileSoapIn" />
+      <wsdl:output message="tns:DeleteFileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="BottleAndBoxCode">
+      <wsdl:input message="tns:BottleAndBoxCodeSoapIn" />
+      <wsdl:output message="tns:BottleAndBoxCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PandXBangding">
+      <wsdl:input message="tns:PandXBangdingSoapIn" />
+      <wsdl:output message="tns:PandXBangdingSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckUploadfile">
+      <wsdl:input message="tns:CheckUploadfileSoapIn" />
+      <wsdl:output message="tns:CheckUploadfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendProductSet">
+      <wsdl:input message="tns:SendProductSetSoapIn" />
+      <wsdl:output message="tns:SendProductSetSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInformation">
+      <wsdl:input message="tns:CustomerInformationSoapIn" />
+      <wsdl:output message="tns:CustomerInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SenInformation">
+      <wsdl:input message="tns:SenInformationSoapIn" />
+      <wsdl:output message="tns:SenInformationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendZgProduct">
+      <wsdl:input message="tns:SendZgProductSoapIn" />
+      <wsdl:output message="tns:SendZgProductSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="maxTime">
+      <wsdl:input message="tns:maxTimeSoapIn" />
+      <wsdl:output message="tns:maxTimeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FileUpLoad">
+      <wsdl:input message="tns:FileUpLoadSoapIn" />
+      <wsdl:output message="tns:FileUpLoadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <wsdl:input message="tns:GetTaskSoapIn" />
+      <wsdl:output message="tns:GetTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTableName">
+      <wsdl:input message="tns:GetTaskTableNameSoapIn" />
+      <wsdl:output message="tns:GetTaskTableNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetTaskFinished">
+      <wsdl:input message="tns:SetTaskFinishedSoapIn" />
+      <wsdl:output message="tns:SetTaskFinishedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnName">
+      <wsdl:input message="tns:GetColumnNameSoapIn" />
+      <wsdl:output message="tns:GetColumnNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SPCZ">
+      <wsdl:input message="tns:SPCZSoapIn" />
+      <wsdl:output message="tns:SPCZSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Increment">
+      <wsdl:input message="tns:IncrementSoapIn" />
+      <wsdl:output message="tns:IncrementSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="IncrementTwo">
+      <wsdl:input message="tns:IncrementTwoSoapIn" />
+      <wsdl:output message="tns:IncrementTwoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertFHFileNameToDB">
+      <wsdl:input message="tns:InsertFHFileNameToDBSoapIn" />
+      <wsdl:output message="tns:InsertFHFileNameToDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebSpliteLine">
+      <wsdl:input message="tns:WebSpliteLineSoapIn" />
+      <wsdl:output message="tns:WebSpliteLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebGetFNameList">
+      <wsdl:input message="tns:WebGetFNameListSoapIn" />
+      <wsdl:output message="tns:WebGetFNameListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoteFHDataImPort">
+      <wsdl:input message="tns:RoteFHDataImPortSoapIn" />
+      <wsdl:output message="tns:RoteFHDataImPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoteDuoFHDataImPort">
+      <wsdl:input message="tns:RoteDuoFHDataImPortSoapIn" />
+      <wsdl:output message="tns:RoteDuoFHDataImPortSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebTuoPanSpliteLine">
+      <wsdl:input message="tns:WebTuoPanSpliteLineSoapIn" />
+      <wsdl:output message="tns:WebTuoPanSpliteLineSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="WebUpdateToFinished">
+      <wsdl:input message="tns:WebUpdateToFinishedSoapIn" />
+      <wsdl:output message="tns:WebUpdateToFinishedSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RoteTuiHuoDataImport">
+      <wsdl:input message="tns:RoteTuiHuoDataImportSoapIn" />
+      <wsdl:output message="tns:RoteTuiHuoDataImportSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="Service1Soap" type="tns:Service1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckRockey">
+      <soap:operation soapAction="http://tempuri.org/CheckRockey" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BackupData">
+      <soap:operation soapAction="http://tempuri.org/BackupData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatDirectory">
+      <soap:operation soapAction="http://tempuri.org/CreatDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <soap:operation soapAction="http://tempuri.org/SaveFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <soap:operation soapAction="http://tempuri.org/DeleteDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="http://tempuri.org/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BottleAndBoxCode">
+      <soap:operation soapAction="http://tempuri.org/BottleAndBoxCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PandXBangding">
+      <soap:operation soapAction="http://tempuri.org/PandXBangding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUploadfile">
+      <soap:operation soapAction="http://tempuri.org/CheckUploadfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProductSet">
+      <soap:operation soapAction="http://tempuri.org/SendProductSet" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInformation">
+      <soap:operation soapAction="http://tempuri.org/CustomerInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenInformation">
+      <soap:operation soapAction="http://tempuri.org/SenInformation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendZgProduct">
+      <soap:operation soapAction="http://tempuri.org/SendZgProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="maxTime">
+      <soap:operation soapAction="http://tempuri.org/maxTime" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpLoad">
+      <soap:operation soapAction="http://tempuri.org/FileUpLoad" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap:operation soapAction="http://tempuri.org/GetTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTableName">
+      <soap:operation soapAction="http://tempuri.org/GetTaskTableName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTaskFinished">
+      <soap:operation soapAction="http://tempuri.org/SetTaskFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnName">
+      <soap:operation soapAction="http://tempuri.org/GetColumnName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPCZ">
+      <soap:operation soapAction="http://tempuri.org/SPCZ" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Increment">
+      <soap:operation soapAction="http://tempuri.org/Increment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncrementTwo">
+      <soap:operation soapAction="http://tempuri.org/IncrementTwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFHFileNameToDB">
+      <soap:operation soapAction="http://tempuri.org/InsertFHFileNameToDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebSpliteLine">
+      <soap:operation soapAction="http://tempuri.org/WebSpliteLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebGetFNameList">
+      <soap:operation soapAction="http://tempuri.org/WebGetFNameList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteFHDataImPort">
+      <soap:operation soapAction="http://tempuri.org/RoteFHDataImPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteDuoFHDataImPort">
+      <soap:operation soapAction="http://tempuri.org/RoteDuoFHDataImPort" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebTuoPanSpliteLine">
+      <soap:operation soapAction="http://tempuri.org/WebTuoPanSpliteLine" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebUpdateToFinished">
+      <soap:operation soapAction="http://tempuri.org/WebUpdateToFinished" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteTuiHuoDataImport">
+      <soap:operation soapAction="http://tempuri.org/RoteTuiHuoDataImport" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="Service1Soap12" type="tns:Service1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CheckRockey">
+      <soap12:operation soapAction="http://tempuri.org/CheckRockey" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BackupData">
+      <soap12:operation soapAction="http://tempuri.org/BackupData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatDirectory">
+      <soap12:operation soapAction="http://tempuri.org/CreatDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveFile">
+      <soap12:operation soapAction="http://tempuri.org/SaveFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteDirectory">
+      <soap12:operation soapAction="http://tempuri.org/DeleteDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="BottleAndBoxCode">
+      <soap12:operation soapAction="http://tempuri.org/BottleAndBoxCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PandXBangding">
+      <soap12:operation soapAction="http://tempuri.org/PandXBangding" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckUploadfile">
+      <soap12:operation soapAction="http://tempuri.org/CheckUploadfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendProductSet">
+      <soap12:operation soapAction="http://tempuri.org/SendProductSet" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CustomerInformation">
+      <soap12:operation soapAction="http://tempuri.org/CustomerInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SenInformation">
+      <soap12:operation soapAction="http://tempuri.org/SenInformation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendZgProduct">
+      <soap12:operation soapAction="http://tempuri.org/SendZgProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="maxTime">
+      <soap12:operation soapAction="http://tempuri.org/maxTime" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FileUpLoad">
+      <soap12:operation soapAction="http://tempuri.org/FileUpLoad" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTask">
+      <soap12:operation soapAction="http://tempuri.org/GetTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskTableName">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskTableName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetTaskFinished">
+      <soap12:operation soapAction="http://tempuri.org/SetTaskFinished" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetColumnName">
+      <soap12:operation soapAction="http://tempuri.org/GetColumnName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SPCZ">
+      <soap12:operation soapAction="http://tempuri.org/SPCZ" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Increment">
+      <soap12:operation soapAction="http://tempuri.org/Increment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IncrementTwo">
+      <soap12:operation soapAction="http://tempuri.org/IncrementTwo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertFHFileNameToDB">
+      <soap12:operation soapAction="http://tempuri.org/InsertFHFileNameToDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebSpliteLine">
+      <soap12:operation soapAction="http://tempuri.org/WebSpliteLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebGetFNameList">
+      <soap12:operation soapAction="http://tempuri.org/WebGetFNameList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteFHDataImPort">
+      <soap12:operation soapAction="http://tempuri.org/RoteFHDataImPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteDuoFHDataImPort">
+      <soap12:operation soapAction="http://tempuri.org/RoteDuoFHDataImPort" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebTuoPanSpliteLine">
+      <soap12:operation soapAction="http://tempuri.org/WebTuoPanSpliteLine" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="WebUpdateToFinished">
+      <soap12:operation soapAction="http://tempuri.org/WebUpdateToFinished" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RoteTuiHuoDataImport">
+      <soap12:operation soapAction="http://tempuri.org/RoteTuiHuoDataImport" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service1">
+    <wsdl:port name="Service1Soap" binding="tns:Service1Soap">
+      <soap:address location="http://192.168.0.8:87/service1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="Service1Soap12" binding="tns:Service1Soap12">
+      <soap12:address location="http://192.168.0.8:87/service1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
